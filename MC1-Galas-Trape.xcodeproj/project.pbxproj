@@ -13,6 +13,7 @@
 		3F6B07CC27FE9DC800F23C18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07CA27FE9DC800F23C18 /* Main.storyboard */; };
 		3F6B07CE27FE9DC900F23C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07CD27FE9DC900F23C18 /* Assets.xcassets */; };
 		3F6B07D127FE9DC900F23C18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07CF27FE9DC900F23C18 /* LaunchScreen.storyboard */; };
+		3F6B07E027FE9F7400F23C18 /* component in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07DF27FE9F7300F23C18 /* component */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3F6B07CD27FE9DC900F23C18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F6B07D027FE9DC900F23C18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F6B07D227FE9DC900F23C18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6B07DF27FE9F7300F23C18 /* component */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = component; path = "MC1-Galas-Trape/component"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		3F6B07C327FE9DC800F23C18 /* MC1-Galas-Trape */ = {
 			isa = PBXGroup;
 			children = (
+				3F6B07DF27FE9F7300F23C18 /* component */,
 				3F6B07C427FE9DC800F23C18 /* AppDelegate.swift */,
 				3F6B07C627FE9DC800F23C18 /* SceneDelegate.swift */,
 				3F6B07C827FE9DC800F23C18 /* ViewController.swift */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F6B07D127FE9DC900F23C18 /* LaunchScreen.storyboard in Resources */,
+				3F6B07E027FE9F7400F23C18 /* component in Resources */,
 				3F6B07CE27FE9DC900F23C18 /* Assets.xcassets in Resources */,
 				3F6B07CC27FE9DC800F23C18 /* Main.storyboard in Resources */,
 			);
