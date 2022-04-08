@@ -13,7 +13,7 @@
 		3F6B07CE27FE9DC900F23C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07CD27FE9DC900F23C18 /* Assets.xcassets */; };
 		3F6B07D127FE9DC900F23C18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07CF27FE9DC900F23C18 /* LaunchScreen.storyboard */; };
 		3F6B07E027FE9F7400F23C18 /* component in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07DF27FE9F7300F23C18 /* component */; };
-		3F6BAF7427FFDD66004380CB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07D227FE9DC900F23C18 /* Info.plist */; };
+		3F6BAF7628003387004380CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07CA27FE9DC800F23C18 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,10 +129,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F6B07D127FE9DC900F23C18 /* LaunchScreen.storyboard in Resources */,
+				3F6BAF7628003387004380CB /* Main.storyboard in Resources */,
 				3F6B07E027FE9F7400F23C18 /* component in Resources */,
 				3F6B07CE27FE9DC900F23C18 /* Assets.xcassets in Resources */,
-				3F6BAF7427FFDD66004380CB /* Info.plist in Resources */,
-				3F6B07CC27FE9DC800F23C18 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
