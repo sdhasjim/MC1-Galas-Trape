@@ -26,7 +26,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        cell.textLabel?.text = "RENZO"
         return cell
     }
-//
+
+//    @IBOutlet weak var cityname: UILabel!
+    @IBOutlet weak var labelText: UILabel!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBAction func indexChanged(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex
+           {
+           case 0:
+               labelText.text = "Bandung, Indonesia"
+           case 1:
+               labelText.text = "Yogyakarta, Indonesia"
+           default:
+               break
+           }
+    }
+    
+    
+    //
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        <#code#>
 //    }
