@@ -10,7 +10,6 @@
 		3F6B07C527FE9DC800F23C18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B07C427FE9DC800F23C18 /* AppDelegate.swift */; };
 		3F6B07C727FE9DC800F23C18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B07C627FE9DC800F23C18 /* SceneDelegate.swift */; };
 		3F6B07C927FE9DC800F23C18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B07C827FE9DC800F23C18 /* ViewController.swift */; };
-		3F6B07CC27FE9DC800F23C18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07CA27FE9DC800F23C18 /* Main.storyboard */; };
 		3F6B07CE27FE9DC900F23C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07CD27FE9DC900F23C18 /* Assets.xcassets */; };
 		3F6B07D127FE9DC900F23C18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07CF27FE9DC900F23C18 /* LaunchScreen.storyboard */; };
 		3F6B07E027FE9F7400F23C18 /* component in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07DF27FE9F7300F23C18 /* component */; };
@@ -131,7 +130,6 @@
 				3F6B07D127FE9DC900F23C18 /* LaunchScreen.storyboard in Resources */,
 				3F6B07E027FE9F7400F23C18 /* component in Resources */,
 				3F6B07CE27FE9DC900F23C18 /* Assets.xcassets in Resources */,
-				3F6B07CC27FE9DC800F23C18 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +294,7 @@
 				INFOPLIST_FILE = "MC1-Galas-Trape/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = AddDetailStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -324,7 +322,7 @@
 				INFOPLIST_FILE = "MC1-Galas-Trape/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = AddDetailStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
