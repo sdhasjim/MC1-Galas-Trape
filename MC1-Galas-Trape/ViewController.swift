@@ -10,6 +10,11 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var labelText: UILabel!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    var isHistory = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,36 +22,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         table.dataSource = self
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel?.text = "RENZO"
-        return cell
-    }
-
-//    @IBOutlet weak var cityname: UILabel!
-    @IBOutlet weak var labelText: UILabel!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBAction func indexChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex
            {
            case 0:
                labelText.text = "Bandung, Indonesia"
+                isHistory = false
+            table.reloadData()
            case 1:
                labelText.text = "Yogyakarta, Indonesia"
-           default:
+            isHistory = true
+            table.reloadData()
+            default:
                break
            }
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return isHistory ? 2 : 3
+    }
     
-    //
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = (tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? HistoryCell)!
+
+        if isHistory {
+            cell.cityName.text = "history"
+            cell.dateLabel.text = "yyyy/MM/dd"
+            cell.contentImage.image = UIImage(named: "Mountain")
+        } else {
+            cell.cityName.text = "on going"
+            cell.dateLabel.text = "yyyy/MM/dd"
+            cell.contentImage.image = UIImage(named: "Mountain")
+        }
+        
+        return cell
+    }
 
 }
 
