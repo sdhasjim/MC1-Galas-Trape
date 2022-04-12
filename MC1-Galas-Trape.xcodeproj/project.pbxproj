@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2501BA2805E32700E5564E /* OnboardingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2501B92805E32700E5564E /* OnboardingStoryboard.storyboard */; };
 		3F6B07C527FE9DC800F23C18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B07C427FE9DC800F23C18 /* AppDelegate.swift */; };
 		3F6B07C727FE9DC800F23C18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B07C627FE9DC800F23C18 /* SceneDelegate.swift */; };
 		3F6B07C927FE9DC800F23C18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B07C827FE9DC800F23C18 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F2501B92805E32700E5564E /* OnboardingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingStoryboard.storyboard; sourceTree = "<group>"; };
 		3F6B07C127FE9DC800F23C18 /* MC1-Galas-Trape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1-Galas-Trape.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6B07C427FE9DC800F23C18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F6B07C627FE9DC800F23C18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				3F6B07D227FE9DC900F23C18 /* Info.plist */,
 				D7E9859D2803EF6000915A49 /* HistoryCell.swift */,
 				3FB1B9872804875500E66868 /* DetailCellTableViewCell.swift */,
+				3F2501B92805E32700E5564E /* OnboardingStoryboard.storyboard */,
 			);
 			path = "MC1-Galas-Trape";
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7FDA0552805E76000BA4456 /* SelectActivitiesStoryboard.storyboard in Resources */,
+				3F2501BA2805E32700E5564E /* OnboardingStoryboard.storyboard in Resources */,
 				3F6B07D127FE9DC900F23C18 /* LaunchScreen.storyboard in Resources */,
 				3F6BAF7628003387004380CB /* Main.storyboard in Resources */,
 				3F6B07E027FE9F7400F23C18 /* component in Resources */,
