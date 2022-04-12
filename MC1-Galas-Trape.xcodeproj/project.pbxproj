@@ -14,6 +14,7 @@
 		3F6B07D127FE9DC900F23C18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07CF27FE9DC900F23C18 /* LaunchScreen.storyboard */; };
 		3F6B07E027FE9F7400F23C18 /* component in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07DF27FE9F7300F23C18 /* component */; };
 		3F6BAF7628003387004380CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B07CA27FE9DC800F23C18 /* Main.storyboard */; };
+		3FB1B9882804875500E66868 /* DetailCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1B9872804875500E66868 /* DetailCellTableViewCell.swift */; };
 		D7E985992803D21400915A49 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E985982803D21400915A49 /* DetailListViewController.swift */; };
 		D7E9859C2803D27D00915A49 /* DetailListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E9859B2803D27A00915A49 /* DetailListStoryboard.storyboard */; };
 		D7E9859E2803EF6000915A49 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E9859D2803EF6000915A49 /* HistoryCell.swift */; };
@@ -29,6 +30,7 @@
 		3F6B07D027FE9DC900F23C18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F6B07D227FE9DC900F23C18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F6B07DF27FE9F7300F23C18 /* component */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = component; path = "MC1-Galas-Trape/component"; sourceTree = SOURCE_ROOT; };
+		3FB1B9872804875500E66868 /* DetailCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellTableViewCell.swift; sourceTree = "<group>"; };
 		D7E985982803D21400915A49 /* DetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListViewController.swift; sourceTree = "<group>"; };
 		D7E9859B2803D27A00915A49 /* DetailListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailListStoryboard.storyboard; sourceTree = "<group>"; };
 		D7E9859D2803EF6000915A49 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryCell.swift; path = "component/screen-view/Cell/HistoryCell.swift"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				3F6B07CF27FE9DC900F23C18 /* LaunchScreen.storyboard */,
 				3F6B07D227FE9DC900F23C18 /* Info.plist */,
 				D7E9859D2803EF6000915A49 /* HistoryCell.swift */,
+				3FB1B9872804875500E66868 /* DetailCellTableViewCell.swift */,
 			);
 			path = "MC1-Galas-Trape";
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB1B9882804875500E66868 /* DetailCellTableViewCell.swift in Sources */,
 				3F6B07C927FE9DC800F23C18 /* ViewController.swift in Sources */,
 				3F6B07C527FE9DC800F23C18 /* AppDelegate.swift in Sources */,
 				3F6B07C727FE9DC800F23C18 /* SceneDelegate.swift in Sources */,

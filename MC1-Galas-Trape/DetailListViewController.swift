@@ -7,25 +7,45 @@
 
 import UIKit
 
-class DetailListViewController: UIViewController {
+class DetailListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var categoryTableView: UITableView!
+    
+    struct DetailList {
+        let iconLogo: String
+        let header: String
+        let checked: String
+    }
+    
+    let data: [DetailList] = [
+        DetailList(iconLogo: "IconClothes", header: "Clothes", checked: "1/4 completed"),
+        DetailList(iconLogo: "IconToiletries", header: "Toiletries", checked: "3/4 completed"),
+        DetailList(iconLogo: "IconTrain", header: "Train", checked: "7/8 completed"),
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        categoryTableView.dataSource = self
+        categoryTableView.delegate = self
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
-    */
-
-    // develop fariz -> kerja dulu -> commit push ke branch develop-fariz -> PR ke main -> (kalo ada konflik rebase dulu dari) -> merged di main -> local di main dipull -> branch develop fariz
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let detailList = data[indexPath.row]
+        let cell = categoryTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DetailCellTableViewCell
+        cell.iconImageView.image = UIImage(named: detailList.iconLogo)
+        cell.categoryLabel.text = detailList.header
+        cell.selectedLabel.text = detailList.checked
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
 
 }
