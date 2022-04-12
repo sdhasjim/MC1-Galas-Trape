@@ -12,7 +12,7 @@ struct ListItems {
     
     let domesticArray = ["Reservation Documents", "Medications", "Maps & directions", "Basic First Aid", "Cash", "Debit / Credit Cards", "Emergency Contact List", "Wallet", "Phone", "Airpods", "Laptop", "Travel bag"]
     
-    let personalArray = ["Windscreen Covers", "Vehicle Document", "Vehicle audit (wheels, brakes, oil,& gas)", "Car phone holder", "Powerbank", "Headphones/Earphones", "Travel Accessories for Sleeping", "Snacks and Drinks"]
+    let personalArray = ["Windscreen Covers", "Vehicle Document", "Vehicle audit (wheels, brakes, oil, and gas)", "Car phone holder", "Powerbank", "Headphones/Earphones", "Travel Accessories for Sleeping", "Snacks and Drinks"]
     
     let publicArray = ["Travel Tickets", "Headphones/Earphones", "Powerbank", "Snacks and Drinks", "Travel Accessories for Sleeping"]
     

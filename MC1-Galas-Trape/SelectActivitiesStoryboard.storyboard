@@ -317,30 +317,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o2E-vl-8mm" id="qjV-HP-Rva">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTh-lC-ktS">
-                                                    <rect key="frame" x="61" y="11" width="309" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xk9-ch-0qQ">
-                                                    <rect key="frame" x="6" y="6" width="50" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="rectangle" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="boxButton:" destination="npj-Tn-0tT" eventType="touchUpInside" id="vHY-o5-8VP"/>
-                                                        <action selector="checkToggled:" destination="o2E-vl-8mm" eventType="touchUpInside" id="TeT-dJ-4ci"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="checkBoxButton" destination="Xk9-ch-0qQ" id="xp5-WY-DOL"/>
-                                            <outlet property="nameLabel" destination="lTh-lC-ktS" id="UUw-Ob-Fa2"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -398,7 +375,6 @@
         <image name="Public" width="23" height="24"/>
         <image name="RectangleWhite" width="90" height="90"/>
         <image name="Swimming" width="15" height="21"/>
-        <image name="rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
