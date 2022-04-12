@@ -2,6 +2,12 @@ import UIKit
 
 class SelectActivitiesViewController: UIViewController {
     
+    var toDoListViewController = ToDoListViewController()
+    
+    var list: [String] = []
+    
+    var listItems = ListItems()
+    
     var isDomesticClicked = false
     var isInternationalClicked = false
     var isPersonalClicked = false
@@ -57,63 +63,169 @@ class SelectActivitiesViewController: UIViewController {
         }
     }
     
+    @IBAction func createMyListClicked(_ sender: UIButton) {
+        for i in list {
+            toDoListViewController.createItem(name: i)
+        }
+    }
+    
     @IBAction func domesticButtonClicked(_ sender: UIButton) {
         isDomesticClicked = !isDomesticClicked
         buttonClicked(status: isDomesticClicked, background: domesticBackground)
+        
+        if isDomesticClicked {
+            for i in listItems.domesticArray {
+                // logicnya dipindahin ke view did load
+                // terus didetect if coredata has object ga perlu di append
+                // kalau array ada update penambahan object, baru di append
+                list.append(i)
+            }
+        } else {
+            // harusnya ga remove all (cuman delete yang gajadi diclick aja harusnya)
+            list.removeAll()
+        }
     }
     
     @IBAction func internationalButtonClicked(_ sender: UIButton) {
         isInternationalClicked = !isInternationalClicked
         buttonClicked(status: isInternationalClicked, background: internationalBackground)
+        
+        if isInternationalClicked {
+            for i in listItems.internationalArray {
+                list.append(i)
+            }
+        } else {
+            list.removeAll()
+        }
     }
     
     @IBAction func personalButtonClicked(_ sender: UIButton) {
         isPersonalClicked = !isPersonalClicked
         buttonClicked(status: isPersonalClicked, background: personalBackground)
+        
+        if isPersonalClicked {
+            for i in listItems.personalArray {
+                list.append(i)
+            }
+        } else {
+            list.removeAll()
+        }
     }
     
     @IBAction func publicButtonClicked(_ sender: UIButton) {
         isPublicClicked = !isPublicClicked
         buttonClicked(status: isPublicClicked, background: publicBackground)
+        
+        if isPublicClicked {
+            for i in listItems.publicArray {
+                list.append(i)
+            }
+        } else {
+            list.removeAll()
+        }
     }
     
     @IBAction func cityButtonClicked(_ sender: UIButton) {
         isCityClicked = !isCityClicked
         buttonClicked(status: isCityClicked, background: cityBackground)
+        
+        if isCityClicked {
+            for i in listItems.cityArray {
+                list.append(i)
+            }
+        } else {
+            list.removeAll()
+        }
     }
     
     @IBAction func countryButtonClicked(_ sender: UIButton) {
         isCountryClicked = !isCountryClicked
         buttonClicked(status: isCountryClicked, background: countryBackground)
+        
+        if isCountryClicked {
+            for i in listItems.countryArray {
+                list.append(i)
+            }
+        } else {
+            list.removeAll()
+        }
     }
     
     @IBAction func mountainClicked(_ sender: UIButton) {
         isMountainClicked = !isMountainClicked
         buttonClicked(status: isMountainClicked, background: mountainBackground)
+        
+        if isMountainClicked {
+            for i in listItems.mountainArray {
+                list.append(i)
+            }
+        } else {
+            list.removeAll()
+        }
     }
     
     @IBAction func beachButtonClicked(_ sender: UIButton) {
         isBeachClicked = !isBeachClicked
         buttonClicked(status: isBeachClicked, background: beachBackground)
+        
+        if isBeachClicked {
+            for i in listItems.beachArray {
+                list.append(i)
+            }
+        } else {
+            list.removeAll()
+        }
     }
     
     @IBAction func swimmingButtonClicked(_ sender: UIButton) {
         isSwimmingClicked = !isSwimmingClicked
         buttonClicked(status: isSwimmingClicked, background: swimmingBackground)
+        
+        if isSwimmingClicked {
+            for i in listItems.swimmingArray {
+                list.append(i)
+            }
+        } else {
+            list.removeAll()
+        }
     }
     
     @IBAction func hikingButtonClicked(_ sender: UIButton) {
         isHikingClicked = !isHikingClicked
         buttonClicked(status: isHikingClicked, background: hikingBackground)
+        
+        if isHikingClicked {
+            for i in listItems.hikingArray {
+                list.append(i)
+            }
+        } else {
+            list.removeAll()
+        }
     }
     
     @IBAction func fishingButtonClicked(_ sender: UIButton) {
         isFishingClicked = !isFishingClicked
         buttonClicked(status: isFishingClicked, background: fishingBackground)
+        
+        if isFishingClicked {
+            for i in listItems.fishingArray {
+                list.append(i)
+            }
+        } else {
+            list.removeAll()
+        }
     }
     
     @IBAction func gardeningButtonClicked(_ sender: UIButton) {
         isGardeningClicked = !isGardeningClicked
         buttonClicked(status: isGardeningClicked, background: gardeningBackground)
+        
+        if isGardeningClicked {
+            for i in listItems.gardeningArray {
+                list.append(i)
+            }
+        } else {
+            list.removeAll()
+        }
     }
 }
