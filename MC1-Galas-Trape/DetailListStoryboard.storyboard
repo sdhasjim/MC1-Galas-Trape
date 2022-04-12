@@ -388,7 +388,6 @@
         <!--View Controller-->
         <scene sceneID="jpd-4G-sT7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PQ9-pW-pmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="AbD-SW-CQh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k7s-2M-NC1">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -583,6 +582,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PQ9-pW-pmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="727.69230769230762" y="95.97156398104265"/>
         </scene>
