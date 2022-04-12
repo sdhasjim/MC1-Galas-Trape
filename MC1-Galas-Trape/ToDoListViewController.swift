@@ -6,36 +6,56 @@
 //
 
 import UIKit
+import CoreData
+
+struct ItemModel {
+    var itemName = ""
+    var itemStatus = false
+}
 
 class ToDoListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var totalCompleted: UILabel!
+    
+    //    var selectActivitiesVC = SelectActivitiesViewController()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var tableView: UITableView?
+    var completedItems = 0
     
-    var models = [ToDoListItem]()
+    var models = [ItemModel]()
+    var selectedCell = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "To Do List Core Data"
         
-        getAllItems()
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.frame = view.bounds
         
+        setupCoreData()
+        
+        completedItems = countTrue()
+        updateLabels(completedItems)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
+    }
+    
+    func setupCoreData() {
+        retrieveData()
+        tableView?.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = model.name
-        cell.accessoryType = model.completed ? .checkmark : .none
+        cell.textLabel?.text = models[indexPath.row].itemName
+        cell.accessoryType = models[indexPath.row].itemStatus ? .checkmark : .none
         return cell
     }
     
@@ -45,15 +65,35 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            deleteItem(item: models[indexPath.row])
+            deleteData(productName: models[indexPath.row])
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let model = models[indexPath.row]
-        model.completed = !model.completed
+        selectedCell = indexPath.row
+        models[indexPath.row].itemStatus = !models[indexPath.row].itemStatus
         tableView.reloadRows(at: [indexPath], with: .automatic)
+        updateCoreData(item: models[indexPath.row])
+        
+        completedItems = countTrue()
+        
+        updateLabels(completedItems)
+        
+    }
+    
+    func countTrue() -> Int {
+        var count = 0
+        for model in models{
+            if(model.itemStatus == true){
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    func updateLabels(_ total:Int){
+        totalCompleted.text = String(total)
     }
     
     @objc private func didTapAdd() {
@@ -62,68 +102,116 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
         alert.addAction(UIAlertAction(title: "Submit", style: .cancel, handler: { [weak self] _ in
             guard let field = alert.textFields?.first, let text = field.text, !text.isEmpty else { return }
             
-            self?.createItem(name: text)
+            self?.createData(name: text)
         }))
         
         present(alert, animated: true)
     }
     
-    // Core Data
+    // MARK: CoreData
     
-    func getAllItems() {
+    func createData(name: String) {
+        // kita perlu buat container dari coredata nya, container core data itu ada di appdelegate file
+        // 1. Kita perlu akses app delegate? karena semua codingan coredata container ada didalam appdelegate
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        // 2. Setelah ada akses ke app delegate, maka kita bisa akses si container coredata nya
+        let manageContext = appDelegate.persistentContainer.viewContext
+        
+        // 3. Kita udah akses container nya, sekarang kita akses entity dari core datanya untuk bisa assign value dari attribute yang ada di entity core data kita
+        guard let productEntity = NSEntityDescription.entity(forEntityName: "ToDoListItem", in: manageContext) else { return }
+        
+        let product = NSManagedObject(entity: productEntity, insertInto: manageContext)
+        product.setValue(name, forKey: "name")
+        product.setValue(false, forKey: "completed")
+        
+        setupCoreData()
+    }
+    
+    func retrieveData() {
+        // Make sure local model juga kosong ga ada data
+        models.removeAll()
+        // kita perlu buat container dari coredata nya, container core data itu ada di appdelegate file
+        // 1. Kita perlu akses app delegate? karena semua codingan coredata container ada didalam appdelegate
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        // 2. Setelah ada akses ke app delegate, maka kita bisa akses si container coredata nya
+        let manageContext = appDelegate.persistentContainer.viewContext
+        
+        // 3. Prepare fetch dari entity coredata nya
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ToDoListItem")
+        
+        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "name", ascending: true)]
+        
         do {
-            models = try context.fetch(ToDoListItem.fetchRequest())
-            DispatchQueue.main.async {
-                self.tableView?.reloadData()
+            let result = try manageContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject] {
+                models.append(ItemModel(itemName: data.value(forKey: "name") as! String, itemStatus: data.value(forKey: "completed") as! Bool))
             }
-        } catch {
-            print("Error")
+        } catch let error as NSError {
+            print("Error due to : \(error.localizedDescription)")
         }
     }
     
-    func createItem(name: String) {
-        let newItem = ToDoListItem(context: context)
-        newItem.name = name
-        newItem.completed = false
+    func updateCoreData(item: ItemModel) {
+        // kita perlu buat container dari coredata nya, container core data itu ada di appdelegate file
+        // 1. Kita perlu akses app delegate? karena semua codingan coredata container ada didalam appdelegate
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        // 2. Setelah ada akses ke app delegate, maka kita bisa akses si container coredata nya
+        let manageContext = appDelegate.persistentContainer.viewContext
+        
+        // 3. Prepare fetch dari entity coredata nya
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "ToDoListItem")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", item.itemName)
         
         do {
-            try context.save()
-            getAllItems()
-        } catch {
-            print("Error")
+            let object = try manageContext.fetch(fetchRequest)
+            
+            let objectToUpdate = object[0] as! NSManagedObject
+            objectToUpdate.setValue(models[selectedCell].itemName, forKey: "name")
+            objectToUpdate.setValue(models[selectedCell].itemStatus, forKey: "completed")
+            
+            do {
+                try manageContext.save()
+            } catch {
+                print(error)
+            }
+        } catch let error as NSError {
+            print(error)
         }
     }
     
-    func deleteItem(item: ToDoListItem) {
-        context.delete(item)
+    func deleteData(productName: ItemModel) {
+        // kita perlu buat container dari coredata nya, container core data itu ada di appdelegate file
+        // 1. Kita perlu akses app delegate? karena semua codingan coredata container ada didalam appdelegate
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        // 2. Setelah ada akses ke app delegate, maka kita bisa akses si container coredata nya
+        let manageContext = appDelegate.persistentContainer.viewContext
+        
+        // 3. Prepare fetch dari entity coredata nya
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ToDoListItem")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", productName.itemName)
         
         do {
-            try context.save()
-            getAllItems()
-        } catch {
-            print("Error")
+            let objectFrom = try manageContext.fetch(fetchRequest)
+            
+            let objectToDelete = objectFrom[0] as! NSManagedObject
+            manageContext.delete(objectToDelete)
+            
+            do {
+                try manageContext.save()
+            } catch {
+                print(error)
+            }
+            
+        } catch let error as NSError {
+            print("Error due to : \(error.localizedDescription)")
         }
-    }
-    
-    func updateItem(item: ToDoListItem, newName: String) {
-        item.name = newName
         
-        do {
-            try context.save()
-            getAllItems()
-        } catch {
-            print("Error")
-        }
+        retrieveData()
+        tableView?.reloadData()
     }
     
 }
-
-//extension ToDoListViewController: ListTableViewCellDelegate {
-//    
-//    func checkBoxToggle(sender: ListTableViewCell) {
-//        if let selectedIndexPath = tableView?.indexPath(for: sender) {
-//            models[selectedIndexPath.row].completed = !models[selectedIndexPath.row].completed
-//            tableView?.reloadRows(at: [selectedIndexPath], with: .automatic)
-//        }
-//    }
-//}

@@ -65,7 +65,7 @@ class SelectActivitiesViewController: UIViewController {
     
     @IBAction func createMyListClicked(_ sender: UIButton) {
         for i in list {
-            toDoListViewController.createItem(name: i)
+            toDoListViewController.createData(name: i)
         }
     }
     
