@@ -22,6 +22,7 @@
 		D7E985992803D21400915A49 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E985982803D21400915A49 /* DetailListViewController.swift */; };
 		D7E9859C2803D27D00915A49 /* DetailListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E9859B2803D27A00915A49 /* DetailListStoryboard.storyboard */; };
 		D7E9859E2803EF6000915A49 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E9859D2803EF6000915A49 /* HistoryCell.swift */; };
+		D7FDA0552805E76000BA4456 /* SelectActivitiesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFB8BBD2805345C00ED4339 /* SelectActivitiesStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7FDA0552805E76000BA4456 /* SelectActivitiesStoryboard.storyboard in Resources */,
 				3F6B07D127FE9DC900F23C18 /* LaunchScreen.storyboard in Resources */,
 				3F6BAF7628003387004380CB /* Main.storyboard in Resources */,
 				3F6B07E027FE9F7400F23C18 /* component in Resources */,
