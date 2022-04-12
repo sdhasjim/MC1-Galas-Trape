@@ -94,7 +94,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Public">
+                                <buttonConfiguration key="configuration" style="plain" image="Public" imagePlacement="top" title="Public" imagePadding="5">
                                     <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="10"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -372,6 +372,7 @@
         <image name="International" width="21" height="22"/>
         <image name="Mountain" width="22" height="20"/>
         <image name="Personal" width="24" height="20"/>
+        <image name="Public" width="23" height="24"/>
         <image name="RectangleWhite" width="90" height="90"/>
         <image name="Swimming" width="15" height="21"/>
         <systemColor name="systemBackgroundColor">
