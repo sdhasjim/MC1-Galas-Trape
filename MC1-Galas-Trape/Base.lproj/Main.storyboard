@@ -51,6 +51,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Next">
                                             <color key="baseBackgroundColor" red="0.31764705879999999" green="0.31372549020000001" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="lGI-XP-btA" kind="show" id="alv-z7-KUC"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOS-Mj-jo0">
                                         <rect key="frame" x="63" y="26" width="50" height="21"/>
@@ -198,6 +201,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9v-Vg-XLZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1261.5384615384614" y="1670.6161137440758"/>
+        </scene>
+        <!--SelectActivitiesStoryboard-->
+        <scene sceneID="V5s-na-iLL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectActivitiesStoryboard" id="lGI-XP-btA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VGk-v1-svD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41E-GT-eaz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958" y="1776"/>
         </scene>
         <!--My Trip-->
         <scene sceneID="cTg-ZF-lLQ">
