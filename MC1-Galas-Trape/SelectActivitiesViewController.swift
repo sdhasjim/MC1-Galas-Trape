@@ -1,5 +1,7 @@
 import UIKit
 
+//var onToDoListViewDismissedHandler: (() -> Void)? = nil
+
 class SelectActivitiesViewController: UIViewController {
     
     var toDoListViewController = ToDoListViewController()
@@ -51,9 +53,31 @@ class SelectActivitiesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+//        onToDoListViewDismissedHandler = onToDoListViewDismissed
+//        resetButtonState()
     }
+    
+//    func resetButtonState() -> Void
+//    {
+//        isDomesticClicked = false
+//        isInternationalClicked = false
+//        isPersonalClicked = false
+//        isPublicClicked = false
+//        isCityClicked = false
+//        isCountryClicked = false
+//        isMountainClicked = false
+//        isBeachClicked = false
+//        isSwimmingClicked = false
+//        isHikingClicked = false
+//        isFishingClicked = false
+//        isGardeningClicked = false
+//    }
+    
+//    func onToDoListViewDismissed() -> Void
+//    {
+//        resetButtonState()
+//    }
     
     func buttonClicked(status: Bool, background: UIImageView) {
         if status {

@@ -16,6 +16,7 @@ struct ItemModel {
 class ToDoListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var totalCompleted: UILabel!
+    @IBOutlet weak var totalList: UILabel!
     
     //    var selectActivitiesVC = SelectActivitiesViewController()
     
@@ -27,9 +28,14 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
     var models = [ItemModel]()
     var selectedCell = 0
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+//        onToDoListViewDismissedHandler?()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "To Do List Core Data"
         
         tableView?.delegate = self
         tableView?.dataSource = self
@@ -79,7 +85,6 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
         completedItems = countTrue()
         
         updateLabels(completedItems)
-        
     }
     
     func countTrue() -> Int {
@@ -94,6 +99,7 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func updateLabels(_ total:Int){
         totalCompleted.text = String(total)
+        totalList.text = String(models.count)
     }
     
     @objc private func didTapAdd() {
@@ -103,6 +109,7 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
             guard let field = alert.textFields?.first, let text = field.text, !text.isEmpty else { return }
             
             self?.createData(name: text)
+            self?.updateLabels(self!.completedItems)
         }))
         
         present(alert, animated: true)
