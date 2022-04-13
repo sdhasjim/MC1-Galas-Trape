@@ -358,7 +358,7 @@
         <!--MainMenu-->
         <scene sceneID="32q-dd-71K">
             <objects>
-                <tabBarController title="MainMenu" id="5V9-TF-J04" sceneMemberID="viewController">
+                <tabBarController title="MainMenu" modalPresentationStyle="fullScreen" id="5V9-TF-J04" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rGd-XC-Hdh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
