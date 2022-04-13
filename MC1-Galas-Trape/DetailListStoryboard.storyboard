@@ -156,6 +156,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Add New Category">
                                     <color key="baseForegroundColor" systemColor="secondaryLabelColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="gnm-Vg-vWT" kind="show" id="zIR-g6-wf7"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider" translatesAutoresizingMaskIntoConstraints="NO" id="zZ5-Yn-8E0">
                                 <rect key="frame" x="37" y="311.33333333333331" width="318" height="2"/>
@@ -385,10 +388,19 @@
             </objects>
             <point key="canvasLocation" x="18.46153846153846" y="87.440758293838854"/>
         </scene>
+        <!--selectActivities-->
+        <scene sceneID="fUc-mu-6I5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectActivitiesStoryboard" referencedIdentifier="selectActivities" id="gnm-Vg-vWT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NTx-QI-hLQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqj-ml-fuu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-53" y="531"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="jpd-4G-sT7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PQ9-pW-pmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="AbD-SW-CQh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k7s-2M-NC1">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -583,6 +595,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PQ9-pW-pmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="727.69230769230762" y="95.97156398104265"/>
         </scene>
