@@ -157,7 +157,7 @@
                                     <color key="baseForegroundColor" systemColor="secondaryLabelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="gnm-Vg-vWT" kind="show" id="zIR-g6-wf7"/>
+                                    <segue destination="gnm-Vg-vWT" kind="presentation" modalPresentationStyle="fullScreen" id="zIR-g6-wf7"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider" translatesAutoresizingMaskIntoConstraints="NO" id="zZ5-Yn-8E0">

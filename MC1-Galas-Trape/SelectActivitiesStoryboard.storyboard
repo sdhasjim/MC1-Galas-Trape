@@ -287,7 +287,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createMyListClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="byZ-rM-gq2"/>
-                                    <segue destination="npj-Tn-0tT" kind="show" id="Jp9-D9-jtT"/>
+                                    <segue destination="npj-Tn-0tT" kind="presentation" modalPresentationStyle="fullScreen" id="Jp9-D9-jtT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*you can choose destination more than 1 from the list " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji8-PJ-AV0">
@@ -363,7 +363,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IEf-AX-0Ni">
-                                <rect key="frame" x="0.0" y="158" width="390" height="603"/>
+                                <rect key="frame" x="0.0" y="144" width="390" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="o2E-vl-8mm" customClass="ListTableViewCell" customModule="MC1_Galas_Trape" customModuleProvider="target">
@@ -390,7 +390,7 @@
                             <constraint firstItem="IEf-AX-0Ni" firstAttribute="leading" secondItem="ke0-FC-j3v" secondAttribute="leading" id="4M6-Rf-sOq"/>
                             <constraint firstItem="ke0-FC-j3v" firstAttribute="bottom" secondItem="IEf-AX-0Ni" secondAttribute="bottom" id="NfF-bH-Evr"/>
                             <constraint firstItem="ke0-FC-j3v" firstAttribute="trailing" secondItem="IEf-AX-0Ni" secondAttribute="trailing" id="Zld-1H-EIJ"/>
-                            <constraint firstItem="IEf-AX-0Ni" firstAttribute="top" secondItem="ke0-FC-j3v" secondAttribute="top" constant="70" id="p4V-wF-hOW"/>
+                            <constraint firstItem="IEf-AX-0Ni" firstAttribute="top" secondItem="ke0-FC-j3v" secondAttribute="top" constant="100" id="p4V-wF-hOW"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
