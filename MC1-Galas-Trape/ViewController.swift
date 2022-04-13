@@ -26,11 +26,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         switch segmentedControl.selectedSegmentIndex
            {
            case 0:
-               labelText.text = "Bandung, Indonesia"
-                isHistory = false
+//          labelText.text = "Your Ongoing Trips"
+            isHistory = false
+            
             table.reloadData()
            case 1:
-               labelText.text = "Yogyakarta, Indonesia"
+//          labelText.text = "Your Trip History"
             isHistory = true
             table.reloadData()
             default:
@@ -48,11 +49,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if isHistory {
             cell.cityName.text = "history"
             cell.dateLabel.text = "yyyy/MM/dd"
-            cell.contentImage.image = UIImage(named: "Mountain")
+            cell.contentImage.image = UIImage(named: "city1")
         } else {
             cell.cityName.text = "on going"
             cell.dateLabel.text = "yyyy/MM/dd"
-            cell.contentImage.image = UIImage(named: "Mountain")
+            cell.contentImage.image = UIImage(named: "city1")
         }
         
         return cell
